@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Registro de Aspirantes</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+        rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+
+            margin: 0;
+            min-height: 100vh;
+
+            font-family: 'Poppins', sans-serif;
+
+            background: linear-gradient(
+                135deg,
+                #27a841,
+                #41e269
+            );
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 30px 15px;
+        }
+
+        /* CONTENEDOR */
+        .formulario {
+            width: 100%;
+            max-width: 850px;
+            background: rgb(255, 255, 255);
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow:
+                0 10px 35px rgba(0,0,0,0.12);
+        }
+
+
+        /* ENCABEZADO */
+        .encabezado {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+
+        .logo {
+            width: 130px;
+            height: 130px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+
+        .encabezado h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+
+        .encabezado p {
+            color: #777;
+            margin: 0;
+        }
+
+
+        /* TITULOS */
+        .titulo-seccion {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 28px 0 15px;
+            color: #333;
+            border-left: 5px solid #0d6efd;
+            padding-left: 10px;
+        }
+
+
+        /* INPUTS */
+        .form-label {
+            font-weight: 500;
+        }
+
+
+        .form-control,
+        .form-select {
+            border-radius: 10px;
+            padding: 11px 14px;
+        }
+
+
+        .form-control:focus,
+        .form-select:focus {
+            box-shadow:
+                0 0 0 3px rgba(13,110,253,0.12);
+        }
+
+
+        /* REDES */
+        .red-social {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+
+        .icono-red {
+            font-size: 24px;
+            width: 35px;
+            text-align: center;
+        }
+
+
+        .facebook {
+            color: #1877f2;
+        }
+
+
+        .instagram {
+            color: #e4405f;
+        }
+
+
+        .whatsapp {
+            color: #25d366;
+        }
+
+
+        /* CONTACTO UNIVERSIDAD */
+        .contacto-universidad {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f7f9fc;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+
+        .contacto-universidad h5 {
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+
+        .contactos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+
+        .contacto {
+            text-decoration: none;
+            font-size: 25px;
+            transition: 0.3s;
+        }
+
+
+        .contacto:hover {
+            transform: scale(1.15);
+        }
+
+
+        .correo {
+            color: #555;
+        }
+
+
+        /* BOTONES */
+        .botones {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+
+        .btn {
+            border-radius: 10px;
+            padding: 11px 25px;
+            font-weight: 500;
+        }
+
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            margin-top: 25px;
+            color: #888;
+            font-size: 13px;
+        }
+
+
+        /* RESPONSIVE */
+        @media (max-width: 600px) {
+            .formulario {
+                padding: 25px 18px;
+            }
+
+            .encabezado h1 {
+                font-size: 23px;
+            }
+
+
+            .botones {
+                flex-direction: column;
+            }
+
+
+            .botones .btn {
+                width: 100%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="formulario">
+
+    <div class="encabezado">
+
+        <img
+            src="./logo.jpeg"
+            alt="Logo de la Universidad"
+            class="logo">
+
+        <h1>Registro de Aspirantes</h1>
+        <p>Hola apreciable aspirante de manera correcta completa la siguiente información, evita proporcionar información falsa. </p>
+
+    </div>
+
+    <form id="formularioRegistro">
+
+        <div class="titulo-seccion">
+            <i class="bi bi-person"></i>
+            Datos personales
+        </div>
+
+        <div class="col-12">
+
+    <label for="nombre" class="form-label">
+        Nombre completo del alumno
+    </label>
+
+    <input
+        type="text"
+        class="form-control"
+        id="nombre"
+        name="nombre"
+        placeholder="Escribe tu nombre completo"
+        required>
+
+    </div>
+        <div class="row g-3">
+
+            <div class="col-md-6">
+
+                <label
+                    for="edad"
+                    class="form-label">
+                    Edad
+                </label>
+
+                <input
+                    type="number"
+                    class="form-control"
+                    id="edad"
+                    name="edad"
+                    min="15"
+                    max="100"
+                    placeholder="Ingresa tu edad"
+                    required>
+
+            </div>
+
+            <div class="col-md-6">
+
+                <label
+                    for="telefono"
+                    class="form-label">
+                    Teléfono
+                </label>
+
+                <input
+                    type="tel"
+                    class="form-control"
+                    id="telefono"
+                    name="telefono"
+                    maxlength="10"
+                    placeholder="Ej. 2221234567"
+                    required>
+
+            </div>
+
+        </div>
+
+        <div class="titulo-seccion">
+            <i class="bi bi-mortarboard"></i>
+            Carrera de interés
+        </div>
+
+        <select
+            class="form-select"
+            id="carrera"
+            name="carrera"
+            required>
+
+            <option
+                value=""
+                selected
+                disabled>
+                Selecciona una carrera
+            </option>
+
+
+            <option value="Licenciatura en Educación">
+                Licenciatura en Educación
+            </option>
+
+            <option
+                value="Ingeniería en Tecnologías de la Información">
+                Ingeniería en Tecnologías de la Información
+            </option>
+
+            <option value="Licenciatura en Contaduría">
+                Licenciatura en Contaduría
+            </option>
+
+        </select>
+
+        <div class="titulo-seccion">
+
+            <i class="bi bi-geo-alt"></i>
+
+            Ubicación
+
+        </div>
+
+        <div class="row g-3">
+
+            <div class="col-12">
+
+                <label
+                    for="direccion"
+                    class="form-label">
+
+                    Dirección
+
+                </label>
+
+
+                <input
+                    type="text"
+                    class="form-control"
+                    id="direccion"
+                    name="direccion"
+                    placeholder="Calle, número, colonia..."
+                    required>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <label
+                    for="localidad"
+                    class="form-label">
+
+                    Localidad
+
+                </label>
+
+                <input
+                    type="text"
+                    class="form-control"
+                    id="localidad"
+                    name="localidad"
+                    placeholder="Localidad"
+                    required>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <label
+                    for="municipio"
+                    class="form-label">
+
+                    Municipio
+
+                </label>
+
+
+                <input
+                    type="text"
+                    class="form-control"
+                    id="municipio"
+                    name="municipio"
+                    placeholder="Municipio"
+                    required>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <label
+                    for="estado"
+                    class="form-label">
+
+                    Estado
+
+                </label>
+
+                <select
+                    class="form-select"
+                    id="estado"
+                    name="estado"
+                    required>
+
+                    <option
+                        value=""
+                        selected
+                        disabled>
+
+                        Selecciona
+
+                    </option>
+
+                    <option>Guerrero</option>
+                    <option>Oaxaca</option>
+                    <option>Puebla</option>
+                    
+                
+                </select>
+
+            </div>
+
+        </div>
+
+        <div class="titulo-seccion">
+
+            <i class="bi bi-share"></i>
+
+            Redes sociales
+
+        </div>
+
+        <div class="red-social">
+
+            <i class="bi bi-facebook icono-red facebook"></i>
+
+            <input
+                type="text"
+                class="form-control"
+                id="facebookAspirante"
+                name="facebookAspirante"
+                placeholder="Escribe tu usuario o perfil de Facebook">
+
+        </div>
+
+        <div class="red-social">
+
+            <i class="bi bi-instagram icono-red instagram"></i>
+
+            <input
+                type="text"
+                class="form-control"
+                id="instagramAspirante"
+                name="instagramAspirante"
+                placeholder="Escribe tu usuario de Instagram">
+
+        </div>
+
+        <div class="red-social">
+
+            <i class="bi bi-whatsapp icono-red whatsapp"></i>
+
+            <input
+                type="tel"
+                class="form-control"
+                id="whatsappAspirante"
+                name="whatsappAspirante"
+                maxlength="10"
+                placeholder="Escribe tu número de WhatsApp">
+
+        </div>
+
+        <div class="contacto-universidad">
+
+            <h5>
+                Contacto de la Universidad
+            </h5>
+
+
+            <div class="contactos">
+
+                <a
+                    href="mailto:uatv.utim.edu.mx"
+                    class="contacto correo"
+                    title="Correo de la Universidad">
+
+                    <i class="bi bi-envelope-fill"></i>
+
+                </a>
+
+                <a
+                    href="https://www.facebook.com/SOY_UATV"
+                    target="_blank"
+                    class="contacto facebook"
+                    title="Facebook de la Universidad">
+
+                    <i class="bi bi-facebook"></i>
+
+                </a>
+
+                <a
+                    href="https://wa.me/522212694246"
+                    target="_blank"
+                    class="contacto whatsapp"
+                    title="WhatsApp del Coordinador">
+
+                    <i class="bi bi-whatsapp"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="botones">
+
+
+            <button
+                type="submit"
+                class="btn btn-primary">
+
+                <i class="bi bi-check-circle"></i>
+
+                Registrar
+
+            </button>
+
+
+            <button
+                type="reset"
+                class="btn btn-outline-secondary">
+
+                <i class="bi bi-arrow-counterclockwise"></i>
+
+                Limpiar
+
+            </button>
+
+        </div>
+
+    </form>
+
+    <footer>
+
+        Registro de aspirantes © Unidad Academica de Tulcingo de Valle
+
+    </footer>
+
+</div>
+<script>
+document
+.getElementById("formularioRegistro")
+.addEventListener("submit", function(event) {
+
+
+    event.preventDefault();
+
+
+    alert(
+        "¡Registro realizado correctamente!"
+    );
+
+
+    this.reset();
+
+
+});
+</script>
+</body>
+</html>
+
